@@ -15,7 +15,7 @@ export async function readTag ({
   dir,
   gitdir = join(dir, '.git'),
   fs: _fs = cores.get(core).get('fs'),
-  oid,
+  oid
 }) {
   try {
     const fs = new FileSystem(_fs)

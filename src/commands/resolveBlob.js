@@ -1,6 +1,7 @@
 import { GitRefManager } from '../managers/GitRefManager.js'
 import { FileSystem } from '../models/FileSystem.js'
 import { E, GitError } from '../models/GitError.js'
+import { GitTree } from '../models/GitTree.js'
 import { readObject } from '../storage/readObject.js'
 import { join } from '../utils/join.js'
 import { cores } from '../utils/plugins.js'
@@ -62,7 +63,7 @@ async function resolveFile ({ fs, gitdir, tree, pathArray, oid, filepath }) {
       if (pathArray.length === 0) {
         return entry.oid
       } else {
-        let { type, object } = await _readObject({
+        let { type, object } = await readObject({
           fs,
           gitdir,
           oid: entry.oid

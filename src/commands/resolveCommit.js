@@ -16,7 +16,7 @@ export async function resolveCommit ({
   dir,
   gitdir = join(dir, '.git'),
   fs: _fs = cores.get(core).get('fs'),
-  ref,
+  ref
 }) {
   try {
     const fs = new FileSystem(_fs)
